@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />		
+    
+      <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css'>
+    <link rel='stylesheet' href='https://codepen.io/fancyapps/pen/Kxdwjj.css'
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;family=Oswald:wght@400;500;600&amp;display=swap" rel="stylesheet"> 
+ 
+ <link href="css/all.min.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
+	<style>
+
+
+/* Page Wrapper/Container Style */
+ .container {
+	 width: 100%;
+	 max-width: 1140px;
+	 margin: 0 auto;
+	 padding: 0 15px;
+}
+/* Responsive Table Style */
+ .responsive-table {
+	 background-color: #fefefe;
+	 border-collapse: collapse;
+	 border-radius: 10px;
+	 box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
+	 width: 100%;
+	 margin: 2rem 0;
+	 overflow: hidden;
+}
+ .responsive-table__row {
+	 display: grid;
+	 border-bottom: 1px solid #edeef2;
+	 padding: 0 1.5rem;
+
+		 grid-template-columns: 2fr 5fr 1fr ;
+
+}
+ @media (min-width: 768px) {
+	 .responsive-table__row {
+		 grid-template-columns: 2fr 5fr 1fr ;
+	}
+}
+ @media (min-width: 768px) and (max-width: 991px) {
+	 .responsive-table__row {
+		 grid-template-columns: 2fr 5fr 1fr;
+	}
+}
+ .responsive-table__row th, .responsive-table__row td {
+	 padding: 1rem;
+}
+ .responsive-table__head {
+	 background-color: #e1e8f2;
+}
+
+ .responsive-table__head__title {
+	 display: flex;
+	 align-items: center;
+	 font-weight: 500;
+	 text-transform: capitalize;
+}
+ .responsive-table__body .responsive-table__row {
+	 transition: 0.1s linear;
+	 transition-property: color, background;
+}
+ .responsive-table__body .responsive-table__row:last-child {
+	 border-bottom: none;
+}
+ .responsive-table__body .responsive-table__row:hover {
+	 color: #fff;
+	 background-color: #252531 ;
+}
+ .responsive-table__body__text {
+	 display: flex;
+	 flex-wrap: wrap;
+	 align-items: center;
+}
+ .responsive-table__body__text::before {
+	 margin-right: 1rem;
+	 font-weight: 600;
+	 text-transform: capitalize;
+}
+
+
+ .responsive-table__body__text--name {
+	 font-weight: 600;
+}
+
+ 
+    </style>
+    <script>
+        /* Please ❤ this if you like it! 😊 */
+
+// Select thead titles from Dom
+const headTitleName = document.querySelector(
+	".responsive-table__head__title--name"
+);
+const headTitleStatus = document.querySelector(
+	".responsive-table__head__title--status"
+);
+const headTitleTypes = document.querySelector(
+	".responsive-table__head__title--types"
+);
+const headTitleUpdate = document.querySelector(
+	".responsive-table__head__title--update"
+);
+const headTitleCountry = document.querySelector(
+	".responsive-table__head__title--country"
+);
+
+// Select tbody text from Dom
+const bodyTextName = document.querySelectorAll(
+	".responsive-table__body__text--name"
+);
+const bodyTextStatus = document.querySelectorAll(
+	".responsive-table__body__text--status"
+);
+const bodyTextTypes = document.querySelectorAll(
+	".responsive-table__body__text--types"
+);
+const bodyTextUpdate = document.querySelectorAll(
+	".responsive-table__body__text--update"
+);
+const bodyTextCountry = document.querySelectorAll(
+	".responsive-table__body__text--country"
+);
+
+// Select all tbody table row from Dom
+const totalTableBodyRow = document.querySelectorAll(
+	".responsive-table__body .responsive-table__row"
+);
+
+// Get thead titles and append those into tbody table data items as a "data-title" attribute
+for (let i = 0; i < totalTableBodyRow.length; i++) {
+	bodyTextName[i].setAttribute("data-title", headTitleName.innerText);
+	bodyTextStatus[i].setAttribute("data-title", headTitleStatus.innerText);
+	bodyTextTypes[i].setAttribute("data-title", headTitleTypes.innerText);
+	bodyTextUpdate[i].setAttribute("data-title", headTitleUpdate.innerText);
+	bodyTextCountry[i].setAttribute("data-title", headTitleCountry.innerText);
+}
+
+    </script>
+</head>
+
+<body>
+
+
+    <div class="container-fluid bg-dark py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pr-3" href="OnlineFeePayment.html">Online Fee Payment</a>
+                        <span class="text-white">|</span>
+                       <a class="text-white pl-3" href="./schdocs.html" target="_blank">DOCUMENTS & INFORMATION</a>
+                       <span class="text-white">|</span>
+                       <a class="text-white pl-3" href="./mandatory-disclosure.html" target="_blank">Mandatory Disclosure Details</a>
+						
+						
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pl-3" href="https://api.whatsapp.com" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>        &nbsp;&nbsp;&nbsp;            	    
+                        <a class="text-white px-3" href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-3" href="https://twitter.com" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-white px-3" href="https://www.linkedin.com" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-white px-3" href="https://www.instagram.com" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-white pl-3" href="https://youtube.com" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container position-relative" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+            
+                <a href="#" class="navbar-brand">
+                
+                    <h1 class="m-0 display-5 text-white"><span class="text-primary"></span>	Santians International School</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">About Us</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+								<a href="#" class="dropdown-item">Vision</a>
+								<a href="#" class="dropdown-item">Mission</a>
+								<a href="#" class="dropdown-item">School Motto</a>
+								<a href="#" class="dropdown-item">Concerns / Core Values</a>
+								<a href="#" class="dropdown-item">History</a>
+								<a href="#" class="dropdown-item">School Management Committee</a>
+								<a href="#" class="dropdown-item">Principal's Desk</a>
+								<a href="#" class="dropdown-item">Staff List</a>
+								<a href="#" class="dropdown-item">Subjects Offered</a>
+								<a href="#" class="dropdown-item">School Uniform</a>
+								</div>
+                        </div>
+                        
+						
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Academics</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="#" class="dropdown-item">Syllabus</a>
+                                <a href="#" class="dropdown-item">Question Paper</a>
+                                <a href="#" class="dropdown-item">Subject Options</a>
+                                <a href="#" class="dropdown-item">Examination Policy</a>
+                                <a href="#" class="dropdown-item">Teaching Strategies</a>
+                                <a href="#" class="dropdown-item">Exam Time Table</a>
+                            </div>
+                        </div>
+						
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Activities</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+								<a href="#" class="dropdown-item">Workshop & Training</a>
+                                <a href="#" class="dropdown-item">Intra School</a>
+                                <a href="#" class="dropdown-item">Inter School</a>
+								<a href="#" class="dropdown-item">Annual Function</a>
+								<a href="#" class="dropdown-item">Farewell</a>
+								<a href="#" class="dropdown-item">Educational Tours & Visits</a>
+								<a href="#" class="dropdown-item">Annual Awards</a>
+								<a href="#" class="dropdown-item">Multi Skills</a>
+								<a href="#" class="dropdown-item">Science Festivals</a>
+                            </div>
+                        </div>
+						
+                        </div>
+						
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+ 
+    <div class="container-fluid bg-white py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-left mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                      
+                        <div class="d-flex flex-column">
+                            <h5>Our Address</h5>
+                            <p class="m-0">Ward No. 9, Khatwa Road, Gaurav Path, Lalsot Dausa Rajasthan 303503</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-center mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                       
+                        <div class="d-flex flex-column">
+                            <h5>Email Us</h5>
+                            <p class="m-0">contact@santakidz.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-left text-lg-right mb-3 mb-lg-0">
+                    <div class="d-inline-flex text-left">
+                       
+                        <div class="d-flex flex-column">
+                            <h5>Call Us</h5>
+                            <p class="m-0">+919887000269</p>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+			
+        </div>
+    </div>
+    <!-- Under Nav End -->
+
+	<!-- Important Information -->
+			
+<!-- /* Please ❤ this if you like it! 😊 */ -->
+
+<!-- Page wrapper/Container Section -->
+<div class="container">
+    <iframe src="https://drive.google.com/file/d/1fE5_YOFcteB27byBGhWgyt77NOASRKJo/preview" width="100%" height="1000px" allow="autoplay"></iframe>
+	</div>
+	
+
+	    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
+    	<div class="row pt-5">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33319.30626850164!2d77.33779619776506!3d28.62194920560403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce57dba47629f%3A0xf8f104ce453d0b8f!2sKailash%20Hospital%20%26%20Neuro%20Institute!5e0!3m2!1sen!2sin!4v1685790973958!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+        <div class="row pt-5">
+            <div class="row pt-5">
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <h4 class="text-primary mb-4">Get In Touch</h4>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Ward No. 9, Khatwa Road, Gaurav Path, Lalsot Dausa Rajasthan 303503</p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>+91-9887000269</p>
+                    <p><i class="fa fa-envelope mr-2"></i>contact@santakidz.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://api.whatsapp.com/send?phone=911412568477"><i class="fab fa-whatsapp"></i></a>                
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/subodhrambagh"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://twitter.com/subodh_jaipur"><i class="fab fa-twitter"></i></a>                    
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.linkedin.com/company/subodhpublicschoolrambagh"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/subodhpublicschooljaipur"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://youtube.com/c/SubodhPublicSchoolRambaghJaipur"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                           
+            <div class="col-lg-2 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Quick Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Admission</a>
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Academics</a>
+                    <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Popular Links</h4>
+                <div class="d-flex flex-column justify-content-start">
+                    <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Student Zone</a>
+                    <a class="text-white mb-2" href="#" target="_blank"><i class="fa fa-angle-right mr-2"></i>Online Fee Payment</a>
+                   <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Online Registration (Admission) Form</a>
+                    <a class="text-white mb-2" href="#" target="_blank"><i class="fa fa-angle-right mr-2"></i>School Virtual Tour</a>
+					
+					<a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>School Level Fees Committee (SLFC)</a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-primary mb-4">Newsletter</h4>
+                <form action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control border-0" placeholder="Your Name" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control border-0" placeholder="Your Email" required />
+                    </div>
+                    <div>
+                        <button class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">www.abc.com</a>. All Rights Reserved. Designed by
+                <a class="text-white font-weight-bold" href="https://www.linkedin.com/in/gauravyadav342/">GAURAV YADAV</a>
+            </p>
+        </div>
+    </div>
+  
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+	   
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/easing/easing.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
+
+
+  
+    <script src="js/main.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js'></script>
+
+</body>
+
+
+</html>
